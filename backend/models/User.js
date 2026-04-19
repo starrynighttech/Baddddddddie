@@ -6,7 +6,8 @@ const UserSchema = new mongoose.Schema({
   balance: { type: Number, default: 0 },
   referralCode: String,
   referredBy: String,
-  role: { type: String, default: "user" }
+  role: { type: String, default: "user" },
+  createdAt: { type: Date, default: Date.now }
 })
 
 module.exports = mongoose.model("User", UserSchema)
