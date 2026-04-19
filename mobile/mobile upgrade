@@ -1,0 +1,13 @@
+import io from "socket.io-client"
+
+const socket = io("http://YOUR_SERVER")
+
+socket.emit("shake", {
+  userId: "123",
+  lat: 0,
+  lng: 0
+})
+
+socket.on("match", data => {
+  console.log("Matched users:", data)
+})
